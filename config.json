@@ -1,0 +1,22 @@
+{
+    "paths": {
+        "client_dist_path": "./server/dist",
+        "server_dist_path": "./client/dist",
+        "dist_path": "./dist"
+    },
+    "client": {
+        "development_host": "http://localhost",
+        "production_host": "/"
+    },
+    "server": {
+        "development_port": 5555,
+        "production_port": 80
+    },
+    "commands": {
+        "client_build_command": "yarn build",
+        "client_devmode_command": "yarn dev",
+        "server_build_command": "yarn build",
+        "server_devmode_command": "yarn start:dev"
+    },
+    "README_TEXT": "# Distribution Folder\nYour output files will be built into here..."
+}
