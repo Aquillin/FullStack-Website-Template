@@ -106,4 +106,5 @@ typings/
 
 # Fullstack Website Template
 **/dist/*
+**/NOTE.md
 !*.md
