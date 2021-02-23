@@ -16,7 +16,8 @@
         "client_build_command": "yarn build",
         "client_devmode_command": "yarn dev",
         "server_build_command": "yarn build",
-        "server_devmode_command": "yarn start:dev"
+        "server_devmode_command": "yarn start:prod",
+        "server_prodmode_command": "yarn start:prod"
     },
     "README_TEXT": "# Distribution Folder\nYour output files will be built into here..."
 }
