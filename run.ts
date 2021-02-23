@@ -2,7 +2,7 @@ const args = process.argv;
 import chalk = require('chalk');
 import childProcess = require('child_process')
 import { join } from 'path';
-import config from "./config"
+import config from "./client_config"
 const {client_devmode_command, server_devmode_command} = config.commands;
 
 function errorMessage(command_type: string, command: string) {
@@ -14,14 +14,16 @@ function startDevClient() {
         errorMessage("client devmode", client_devmode_command);
     })
     devClient.stdout?.on('data', (data: string) => {
-        console.log(data);
+        console.log(chalk.green(chalk.bold("CLIENT: ") + data));
     })
 }
 
 function startDevServer() {
-    childProcess.exec(server_devmode_command, {cwd: join(__dirname, 'server')}).on("error", () => {
-        errorMessage("server devmode", server_devmode_command);
+    const devServer = childProcess.exec(server_devmode_command, {cwd: join(__dirname, 'server')});
+    devServer.stdout?.on('data', (data: string) => {
+        console.log(chalk.yellow(chalk.bold("SERVER: ") + data));
     })
+    
 }
 
 for(let i = 0; i < args.length; i++) {
@@ -30,9 +32,7 @@ for(let i = 0; i < args.length; i++) {
         startDevClient();
         startDevServer();
     }
-    // else if(curr_arg === "--production" || curr_arg === "-P") {
-    //     childProcess.exec(server_devmode_command, {cwd: join(__dirname, 'server')}).on("error", () => {
-    //         errorMessage("server devmode", server_devmode_command);
-    //     })
-    // }
+    else if(curr_arg === "--production" || curr_arg === "-P") {
+        // Do production stuff in here... coming eventually.
+    }
 }
