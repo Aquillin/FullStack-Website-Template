@@ -13,5 +13,8 @@ module.exports = {
   ],
   plugins: ['prettier'],
   // add your custom rules here
-  rules: {},
+  rules: {
+    camelcase: 0,
+    // indent: ['error', 4],
+  },
 }
