@@ -25,7 +25,7 @@
         "client_devmode_command": "yarn dev",
         "server_build_command": "yarn build",
         "server_devmode_command": "yarn start:dev",
-        "install_dist_dependencies": "yarn install"
+        "install_dependencies": "yarn install"
     },
     "production_commannds": {
         "run": "node"

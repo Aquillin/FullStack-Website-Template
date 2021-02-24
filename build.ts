@@ -20,7 +20,7 @@ const {
 const {
     client_build_command,
     server_build_command,
-    install_dist_dependencies,
+    install_dependencies,
 } = config.commands;
 
 // Add some stuff to clear dist
@@ -113,7 +113,7 @@ async function copyServerToDist() {
         );
     });
 
-    childProcess.execSync(install_dist_dependencies, {
+    childProcess.execSync(install_dependencies, {
         cwd: join(__dirname, 'dist'),
     });
 }

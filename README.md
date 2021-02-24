@@ -1,3 +1,9 @@
+# Setup
+1. Run `yarn install` or `npm install` if you don't have yarn to install the build dependencies in the root folder.
+2. Run `yarn install-all` or `npm run install-all` if you don't have yarn. This will install all the dependencies of the project you want.
+
+That's literally it, so go develop whatever the heck you want after you do that.
+
 # FullStack-Website-Template
 A template for creating full deployment ready websites.
 
@@ -60,7 +66,7 @@ The default client is made in NuxtJS you can read up on it at the [NuxtJS Docs](
 | client_devmode_command | The command to run the client for development purposes. Is run from `./client/`. |
 | server_build_command | The build command for the server, this will be executed from `./server/`. Leave empty if your server has no build script. |
 | server_devmode_command | The command to run the client for development purposes. Is run from `./client/`. |
-| install_dist_dependencies | The command used to install any required npm packages in `./dist`. The only scripts this should be are either `yarn install` if you use yarn and `npm install` if you don't. |
+| install_dependencies | The command used to install any required npm packages in the project. This should either be `yarn install` if you use yarn and `npm install` if you don't. |
 
 |*production_commands*|details|
 |--------|-------|
