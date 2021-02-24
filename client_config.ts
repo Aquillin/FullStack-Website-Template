@@ -50,14 +50,6 @@ export_object.client.production_host = convertToUrl(
     production_host,
     production_port
 );
-export_object.build.client_path_from_dist = moveRootForward(
-    client_dist_path_from_root,
-    1
-);
-export_object.build.server_path_from_dist = moveRootForward(
-    server_dist_path_from_root,
-    1
-);
 console.log({ server_dist_path_from_root });
 export_object.build.output_server_container_path = 'dist/app';
 export_object.build.client_location_in_dist = join('dist', config.build.client_location_in_server);

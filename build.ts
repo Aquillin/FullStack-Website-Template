@@ -10,8 +10,6 @@ const { README_TEXT } = config;
 const {
     client_dist_path_from_root,
     server_dist_path_from_root,
-    client_path_from_dist,
-    server_path_from_dist,
     distribution_dir,
     static_files,
     server_files_to_copy,
@@ -80,8 +78,9 @@ async function addPackageDotJson() {
         author: packageDotJson.author,
         dependencies: serverPackageDotJson.dependencies,
         license: packageDotJson.license,
-
-        scripts: config.production_commannds,
+        scripts: {
+            run: config.production_commannds.run + " " + config.build.server_start_path_from_container
+        }
     };
     await addFileInDist('package.json', JSON.stringify(newPackageDotJson));
 }
