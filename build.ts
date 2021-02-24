@@ -10,8 +10,6 @@ const { README_TEXT } = config;
 const {
     client_dist_path_from_root,
     server_dist_path_from_root,
-    client_path_from_dist,
-    server_path_from_dist,
     distribution_dir,
     static_files,
     server_files_to_copy,
@@ -22,7 +20,7 @@ const {
 const {
     client_build_command,
     server_build_command,
-    install_dist_dependencies,
+    install_dependencies,
 } = config.commands;
 
 // Add some stuff to clear dist
@@ -80,8 +78,9 @@ async function addPackageDotJson() {
         author: packageDotJson.author,
         dependencies: serverPackageDotJson.dependencies,
         license: packageDotJson.license,
-
-        scripts: config.production_commannds,
+        scripts: {
+            run: config.production_commannds.run + " " + config.build.server_start_path_from_container
+        }
     };
     await addFileInDist('package.json', JSON.stringify(newPackageDotJson));
 }
@@ -114,7 +113,7 @@ async function copyServerToDist() {
         );
     });
 
-    childProcess.execSync(install_dist_dependencies, {
+    childProcess.execSync(install_dependencies, {
         cwd: join(__dirname, 'dist'),
     });
 }

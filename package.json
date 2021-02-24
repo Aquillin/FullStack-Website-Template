@@ -14,7 +14,8 @@
     "run:server": "ts-node ./run.ts --server",
     "build": "ts-node ./build.ts -C -S",
     "build:client": "ts-node ./build.ts -C",
-    "build:server": "ts-node ./build.ts -S"
+    "build:server": "ts-node ./build.ts -S",
+    "install-all": "yarn install && ts-node ./init.ts"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
