@@ -10,8 +10,9 @@ A template for creating full deployment ready websites.
 Comes bundled with Nuxt and NestJS. Designed for any client/server connection of projects however. Consider this a monorepo.
 
 Here's some of the capabilities this template can make easy.
-1. Running a server and client at the same time and having the host urls provided via a config.
-2. 
+1. Running a server and client at the same time
+2. Changing the server url for development and production mode.
+3. Combining the client and server together to create a distribution folder.
 
 #### Please note...
 if you are starting from new and you run into errors importing `client_config.ts` or `server_config.ts` you need to add `./tsconfig.json` to the references in `./client/tsconfig.json` or `./server/tsconfig.json` file like this... Feel free to copy this code... References just allow you to reference another project's typescript files in your typescript project which is why this works.
