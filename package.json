@@ -10,7 +10,11 @@
   "scripts": {
     "run:dev": "ts-node ./run.ts --development",
     "run:prod": "ts-node ./run.ts --production",
-    "build": "ts-node ./build.ts"
+    "run:client": "ts-node ./run.ts --client",
+    "run:server": "ts-node ./run.ts --server",
+    "build": "ts-node ./build.ts -C -S",
+    "build:client": "ts-node ./build.ts -C",
+    "build:server": "ts-node ./build.ts -S"
   },
   "devDependencies": {
     "@types/axios": "^0.14.0",
