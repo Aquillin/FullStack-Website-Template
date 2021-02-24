@@ -21,6 +21,8 @@
                     GitHub
                 </a>
             </div>
+
+            <server-status></server-status>
         </div>
     </div>
 </template>
@@ -28,20 +30,17 @@
 <script lang="ts">
 import Vue from 'vue'
 import { Component } from 'nuxt-property-decorator'
+import ServerStatus from '@/components/ServerStatus.vue'
 
-@Component({})
-export default class extends Vue {
-    msg: string = 'Hey'
-
-    mounted() {
-        this.$axios.get('/').then((res) => {
-            console.log(res.data)
-        })
-    }
-}
+@Component({
+    components: {
+        ServerStatus,
+    },
+})
+export default class extends Vue {}
 </script>
 
-<style>
+<style lang="scss">
 /* Sample `apply` at-rules with Tailwind CSS
 .container {
 @apply min-h-screen flex justify-center items-center text-center mx-auto;

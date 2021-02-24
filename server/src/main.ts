@@ -3,7 +3,7 @@ import { AppModule } from './app.module';
 import config from '../../server_config';
 console.log({ config });
 const { development_port, production_port } = config.server;
-
+console.log("Hey")
 async function bootstrap() {
     const app = await NestFactory.create(AppModule, {
         cors: true,

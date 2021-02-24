@@ -1,8 +1,18 @@
 {
-    "paths": {
-        "client_dist_path": "./server/dist",
-        "server_dist_path": "./client/dist",
-        "dist_path": "./dist"
+    "build": {
+        "client_dist_path_from_root": "./client/dist",
+        "server_dist_path_from_root": "./server/dist",
+        "server_path_from_dist": "",
+        "client_path_from_dist": "",
+        "output_server_container_path": "",
+
+        "client_location_in_server": "./client",
+        "client_location_in_dist": "",
+        
+        "server_start_path_from_dist": "./server/src/main",
+        "distribution_dir": "./dist",
+        "static_files": ["node_modules", "yarn.lock", ".env"],
+        "server_files_to_copy": []
     },
     "client": {
         "development_host": "http://localhost",
@@ -16,8 +26,11 @@
         "client_build_command": "yarn build",
         "client_devmode_command": "yarn dev",
         "server_build_command": "yarn build",
-        "server_devmode_command": "yarn start:prod",
-        "server_prodmode_command": "yarn start:prod"
+        "server_devmode_command": "yarn start:dev",
+        "install_dist_dependencies": "yarn install"
+    },
+    "production_commannds": {
+        "run": "node ./app/server/src/main"
     },
     "README_TEXT": "# Distribution Folder\nYour output files will be built into here..."
 }

@@ -68,4 +68,5 @@
     "forceConsistentCasingInFileNames": true, /* Disallow inconsistently-cased references to the same file. */
     "composite": true
   },
+  "include": ["**/*.tsx?", "./config.json"]
 }

@@ -108,3 +108,4 @@ typings/
 **/dist/*
 **/NOTE.md
 !*.md
+server/client
