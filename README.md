@@ -30,8 +30,7 @@ The default server is NestJS and you can read up on it at the [NestJS Docs](http
 The server is where any logic for the app will be run and if you are using this template you should use an API style of logic for the server.
 
 ## Client
-The default client is made in NuxtJS it has a notifier to tell you whether or not the client is connected to the server and will auto connect
-to the server... It uses the development/production port from `config.json`
+The default client is made in NuxtJS you can read up on it at the [NuxtJS Docs](https://nuxtjs.org/docs/2.x/get-started/routing). The client comes with a notifier to tell you whether or not the client can connect to the server... It uses the development/production port as well as the production/development host from `config.json` to determine the server's url.
 
 ## Config Command Info
 |*build*|details|
