@@ -17,3 +17,5 @@ async function start() {
     await installClientDependencies();
     await installServerDependencies();
 }
+
+start();
