@@ -1,7 +1,8 @@
+import { NuxtConfig } from '@nuxt/types'
 import config from '../client_config'
 const { development_host, production_host } = config.client
 
-export default {
+export const nuxtConfig: NuxtConfig = {
     // Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
     ssr: false,
 
@@ -46,7 +47,7 @@ export default {
 
     // Axios module configuration: https://go.nuxtjs.dev/config-axios
     axios: {
-        baseUrl:
+        baseURL:
             process.env.NODE_ENV === 'production'
                 ? production_host
                 : development_host,
@@ -62,3 +63,5 @@ export default {
     // Build Configuration: https://go.nuxtjs.dev/config-build
     build: {},
 }
+
+export default nuxtConfig
